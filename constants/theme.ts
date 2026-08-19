@@ -1,15 +1,22 @@
 export const colors = {
-  primary: '#2F175D',
-  primaryPressed: '#241249',
-  secondary: '#A98EE8',
-  background: '#F8F7FC',
-  surface: '#FFFFFF',
-  text: '#242129',
-  mutedText: '#706B78',
-  border: '#E7E3ED',
-  placeholder: '#9A95A2',
+  primary: '#7C3AED',
+  primaryPressed: '#6D28D9',
+  secondary: '#A78BFA',
+  background: '#000000',
+  surface: '#111111',
+  text: '#FFFFFF',
+  mutedText: '#A0A0A0',
+  border: '#333333',
+  placeholder: '#777777',
   white: '#FFFFFF',
   error: '#B42318',
+} as const;
+
+export const fontFamily = {
+  regular: 'Oswald_400Regular',
+  medium: 'Oswald_500Medium',
+  semibold: 'Oswald_600SemiBold',
+  bold: 'Oswald_700Bold',
 } as const;
 
 export const spacing = {
