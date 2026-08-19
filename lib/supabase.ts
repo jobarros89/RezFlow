@@ -1,8 +1,10 @@
-/**
- * Placeholder for the future Supabase client.
- * Add EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY before initializing it.
- */
-export const supabaseConfig = {
-  url: process.env.EXPO_PUBLIC_SUPABASE_URL,
-  anonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
-};
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createClient } from '@supabase/supabase-js';
+
+const url = process.env.EXPO_PUBLIC_SUPABASE_URL;
+const anonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+export const isSupabaseConfigured = Boolean(url && anonKey);
+
+export const supabase = createClient(url ?? 'https://placeholder.supabase.co', anonKey ?? 'placeholder', {
+  auth: { autoRefreshToken: true, detectSessionInUrl: false, persistSession: true, storage: AsyncStorage },
+});

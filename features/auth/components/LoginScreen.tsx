@@ -2,18 +2,21 @@ import { useState } from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
 
 import { Button } from '@/components/ui/Button';
 import { TextField } from '@/components/ui/TextField';
 import { colors, fontFamily, spacing } from '@/constants/theme';
+import { authService } from '@/services/auth.service';
 
 export function LoginScreen() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Authentication will be provided by Supabase in a future sprint.
-    console.info('Mock login', { email, hasPassword: Boolean(password) });
+    try { await authService.signIn(email, password); router.replace('/onboarding'); }
+    catch (error) { Alert.alert('Não foi possível entrar', error instanceof Error ? error.message : 'Tente novamente.'); }
   };
 
   return (
@@ -33,11 +36,11 @@ export function LoginScreen() {
           <View style={styles.form}>
             <TextField icon="mail-outline" label="E-MAIL" placeholder="seu@email.com" autoCapitalize="none" autoComplete="email" keyboardType="email-address" value={email} onChangeText={setEmail} />
             <TextField icon="lock-closed-outline" label="SENHA" placeholder="Digite sua senha" autoComplete="password" secureTextEntry value={password} onChangeText={setPassword} />
-            <Pressable accessibilityRole="button" hitSlop={8}><Text style={styles.forgot}>Esqueci minha senha</Text></Pressable>
+            <Pressable accessibilityRole="button" hitSlop={8} onPress={() => router.push('/auth/forgot-password')}><Text style={styles.forgot}>Esqueci minha senha</Text></Pressable>
             <Button label="ENTRAR" onPress={handleLogin} />
             <View style={styles.or}><View style={styles.rule} /><Text style={styles.orText}>OU</Text><View style={styles.rule} /></View>
             <Button leftAdornment={<FontAwesome color={colors.white} name="google" size={16} />} label="ENTRAR COM GOOGLE" onPress={() => undefined} variant="secondary" />
-            <View style={styles.signUp}><Text style={styles.signUpPrompt}>Ainda não tenho conta</Text><Pressable accessibilityRole="button" hitSlop={8}><Text style={styles.signUpLink}>CRIAR CONTA</Text></Pressable></View>
+            <View style={styles.signUp}><Text style={styles.signUpPrompt}>Ainda não tenho conta</Text><Pressable accessibilityRole="button" hitSlop={8} onPress={() => router.push('/auth/register')}><Text style={styles.signUpLink}>CRIAR CONTA</Text></Pressable></View>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
