@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   keyboard: { flex: 1 },
   content: { flexGrow: 1, justifyContent: 'space-between', paddingHorizontal: spacing.lg, paddingVertical: spacing.xl, gap: spacing.xxl },
   hero: { paddingTop: spacing.sm },
-  brand: { fontFamily: fontFamily.bold, fontSize: 54, letterSpacing: -1.5, lineHeight: 60 },
+  brand: { alignSelf: 'center', fontFamily: fontFamily.bold, fontSize: 54, letterSpacing: -1.5, lineHeight: 60 },
   brandRez: { color: colors.white },
   brandFlow: { color: colors.primary },
   principles: { borderLeftColor: colors.primary, borderLeftWidth: 3, gap: 1, marginTop: spacing.xl, paddingLeft: spacing.md },
