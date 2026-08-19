@@ -1,0 +1,17 @@
+# Expo and React Native
+.expo/
+dist/
+web-build/
+
+# Dependencies and logs
+node_modules/
+npm-debug.*
+
+# Native build outputs
+ios/
+android/
+
+# Environment files
+.env
+.env.*
+!.env.example
