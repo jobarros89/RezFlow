@@ -28,7 +28,6 @@ export function LoginScreen() {
               <Text style={styles.principle}><Text>DESCOBRIR </Text><Text style={styles.accent}>PROPÓSITO</Text></Text>
               <Text style={styles.principle}><Text>FAZER A </Text><Text style={styles.accent}>DIFERENÇA</Text></Text>
             </View>
-            <Text style={styles.subtitle}>Ferramentas que ajudam sua igreja{`\n`}a servir melhor e ir mais longe.</Text>
           </View>
 
           <View style={styles.form}>
@@ -51,13 +50,12 @@ const styles = StyleSheet.create({
   keyboard: { flex: 1 },
   content: { flexGrow: 1, justifyContent: 'space-between', paddingHorizontal: spacing.lg, paddingVertical: spacing.xl, gap: spacing.xxl },
   hero: { paddingTop: spacing.sm },
-  brand: { alignSelf: 'center', fontFamily: fontFamily.bold, fontSize: 54, letterSpacing: -1.5, lineHeight: 60 },
+  brand: { alignSelf: 'center', fontFamily: fontFamily.bold, fontSize: 50, letterSpacing: -1.5, lineHeight: 56 },
   brandRez: { color: colors.white },
   brandFlow: { color: colors.primary },
   principles: { borderLeftColor: colors.primary, borderLeftWidth: 3, gap: 1, marginTop: spacing.xl, paddingLeft: spacing.md },
-  principle: { color: colors.white, fontFamily: fontFamily.semibold, fontSize: 19, letterSpacing: 0.2, lineHeight: 25 },
+  principle: { color: colors.white, fontFamily: fontFamily.semibold, fontSize: 17, letterSpacing: 0.2, lineHeight: 23 },
   accent: { color: colors.primary },
-  subtitle: { color: colors.mutedText, fontSize: 15, lineHeight: 22, marginTop: spacing.lg },
   form: { gap: spacing.md },
   forgot: { alignSelf: 'flex-end', color: colors.secondary, fontSize: 14, fontWeight: '700', marginTop: -spacing.sm },
   or: { alignItems: 'center', flexDirection: 'row', gap: spacing.md, marginVertical: spacing.xs },
