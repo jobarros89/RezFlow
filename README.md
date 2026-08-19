@@ -15,7 +15,7 @@ npm install
 npm start
 ```
 
-Copie `.env.example` para `.env` e configure `EXPO_PUBLIC_SUPABASE_URL` e `EXPO_PUBLIC_SUPABASE_ANON_KEY`. Nunca use a service role key no aplicativo.
+Copie `.env.example` para `.env` e configure `EXPO_PUBLIC_SUPABASE_URL` e `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. Nunca use a service role key no aplicativo.
 
 Use `npm run ios` ou `npm run android` para abrir no simulador/dispositivo compatível.
 
